@@ -8,34 +8,72 @@
     <link rel="stylesheet" href="~/css/StyleSheet.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/FarmConnect.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Customize Navbar */
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+        }
+
+        .navbar {
+            background-color: #28a745; /* Darker green for better contrast */
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            color: #f8f9fa !important; /* Off-white text for better readability */
+        }
+
+            .navbar-brand i {
+                margin-right: 10px;
+            }
+
+        .navbar-nav .nav-link {
+            color: #f8f9fa !important; /* Off-white text */
+            transition: color 0.3s ease;
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: white !important; /* Pure white on hover */
+            }
+
+        .privacy-policy p a {
+            text-decoration: underline;
+            color: #ffffff; /* Adjust color as needed */
+            transition: text-shadow 0.3s ease;
+        }
+
+            .privacy-policy p a:hover {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            }
+    </style>
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FarmConnect</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-tractor"></i> Agri-Energy Connect
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Home</a>
                         </li>
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Farmers" asp-action="Index">Farmers</a>
+                                <a class="nav-link" asp-area="" asp-controller="Farmers" asp-action="Index"><i class="fas fa-user-farmer"></i> Farmers</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Employees" asp-action="Index">Employees</a>
+                                <a class="nav-link" asp-area="" asp-controller="Employees" asp-action="Index"><i class="fas fa-users"></i> Employees</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
+                                <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index"><i class="fas fa-carrot"></i> Products</a>
                             </li>
                         }
                     </ul>
@@ -44,17 +82,33 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
+    <main class="container my-5">
+        @RenderBody()
+    </main>
+    <footer class="py-3 mt-5" style="background-color: #28a745;">
         <div class="container">
-            &copy; 2024 - FarmConnect - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row">
+                <div class="col-md-6">
+
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-dark me-3"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="contact-info">
+                    <p>Agri-Energy Connect</p>
+                    <p>st10203065@vcconnect.edu.za</p>
+                    <p>+27 62 171 1265</p>
+                </div>
+
+                <div class="privacy-policy">
+                    <p><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a></p> 
+                </div>
+            </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

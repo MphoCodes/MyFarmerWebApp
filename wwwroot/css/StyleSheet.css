@@ -374,7 +374,16 @@ pre {
     overflow: auto;
     font-size: .875em
 }
+.logo img {
+    max-width: 150px;
+    height: auto;
+}
 
+@media (max-width: 768px) { /* For screens smaller than 768px */
+    .logo img {
+        max-width: 100px;
+    }
+}
     pre code {
         font-size: inherit;
         color: inherit;

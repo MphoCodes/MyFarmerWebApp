@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AWd9rL5YYWSvBa4iNAgDeqKuOhgTXvwKO74DwcpZjms=",
+  "Hash": "WuJThaq7qyZGA6pRoiieBm93GQ32nmg2zpnivVW2pII=",
   "Source": "Agri-Connect Platform",
   "BasePath": "_content/Agri-Connect Platform",
   "Mode": "Default",
@@ -1193,6 +1193,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Mpho\\source\\repos\\Agri-Connect Platform\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Agri-Connect Platform.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Mpho\\source\\repos\\Agri-Connect Platform\\wwwroot\\agrilogo.png",
+      "SourceId": "Agri-Connect Platform",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mpho\\source\\repos\\Agri-Connect Platform\\wwwroot\\",
+      "BasePath": "_content/Agri-Connect Platform",
+      "RelativePath": "agrilogo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\agrilogo.png"
     },
     {
       "Identity": "C:\\Users\\Mpho\\source\\repos\\Agri-Connect Platform\\wwwroot\\css\\site.css",

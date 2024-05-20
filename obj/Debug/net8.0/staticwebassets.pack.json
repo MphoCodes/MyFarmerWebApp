@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Agri-Connect Platform.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Mpho\\source\\repos\\Agri-Connect Platform\\wwwroot\\agrilogo.png",
+      "PackagePath": "staticwebassets\\agrilogo.png"
+    },
+    {
       "Id": "C:\\Users\\Mpho\\source\\repos\\Agri-Connect Platform\\wwwroot\\css\\StyleSheet.css",
       "PackagePath": "staticwebassets\\css\\StyleSheet.css"
     },
