@@ -1,0 +1,52 @@
+﻿@model List<Agri_Connect_Platform.Models.Product>
+
+@{
+    ViewData["Title"] = "View Products";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Filter Controls -->
+<form asp-action="ViewProducts" method="get">
+    <div class="form-group">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="category">Category:</label>
+        <select id="category" name="category" class="form-control">
+            <option value="">All Categories</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Fruits">Fruits</option>
+            <!-- Add more options for other categories -->
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Apply Filters</button>
+</form>
+
+<!-- Product Table -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Production Date</th>
+            <th>Farmer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Category</td>
+                <td>@product.ProductionDate.ToShortDateString()</td>
+                <td>@product.Farmer.FirstName @product.Farmer.LastName</td>
+            </tr>
+        }
+    </tbody>
+</table>

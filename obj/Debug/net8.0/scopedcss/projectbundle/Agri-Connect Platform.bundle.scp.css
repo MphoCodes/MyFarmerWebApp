@@ -1,0 +1,49 @@
+/* _content/Agri-Connect Platform/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-fecvyd78rj] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-fecvyd78rj] {
+  color: #0077cc;
+}
+
+.btn-primary[b-fecvyd78rj] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-fecvyd78rj], .nav-pills .show > .nav-link[b-fecvyd78rj] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-fecvyd78rj] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-fecvyd78rj] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-fecvyd78rj] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-fecvyd78rj] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-fecvyd78rj] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}

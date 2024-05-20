@@ -1,0 +1,156 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Log in";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #4CAF50, #2E8B57); /* Vibrant green gradient */
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 450px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        /* Icon styles */
+        .input-group-text {
+            background-color: #e9ecef; /* Light gray background */
+            border: none;
+            border-radius: 8px 0 0 8px; /* Rounded left corners */
+        }
+
+            .input-group-text i {
+                color: #4CAF50;
+            }
+
+        .form-control {
+            border-radius: 0 8px 8px 0; /* Rounded right corners */
+            border-left: none; /* Remove left border */
+            padding: 15px;
+        }
+
+            .form-control:focus {
+                box-shadow: none; /* Remove default focus shadow */
+                border-color: #4CAF50;
+            }
+
+        .btn-primary {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            border-radius: 25px;
+            padding: 12px 30px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #388e3c;
+            }
+
+        .forgot-password, .register-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .alert-danger {
+            display: none;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2 class="text-center"><i class="fas fa-user-lock fa-2x mb-3"></i> Secure Login</h2>
+
+        <form id="loginForm">
+            <div class="input-group mb-3">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                <input type="email" class="form-control" id="email" placeholder="Email" required>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+            </div>
+            <div class="alert alert-danger" id="errorMessage"></div>
+            <button type="submit" class="btn btn-primary w-100">Log in</button>
+
+            <div class="text-center mt-3">
+                <a href="#" class="forgot-password">Forgot password?</a>
+                <p class="register-link">
+                    Don't have an account? <a href="#">Register</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script>
+        // Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA1n6tMUhQjZBXAt0MmISVXMrdEDbLiabY",
+            authDomain: "agri-energy-connect-f5b07.firebaseapp.com",
+            databaseURL: "https://agri-energy-connect-f5b07-default-rtdb.firebaseio.com",
+            projectId: "agri-energy-connect-f5b07",
+            storageBucket: "agri-energy-connect-f5b07.appspot.com",
+            messagingSenderId: "114678490560",
+            appId: "1:114678490560:web:3df67319f3eeffa885d425"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        const loginForm = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
+
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const email = loginForm['email'].value;
+            const password = loginForm['password'].value;
+
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then(() => {
+                    // Successful login
+                    window.location.href = '/'; // Redirect to dashboard
+                })
+                .catch((error) => {
+                    errorMessage.textContent = error.message;
+                    errorMessage.style.display = 'block';
+                });
+        });
+    </script>
+</body>
+</html>

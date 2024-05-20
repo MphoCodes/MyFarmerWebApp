@@ -1,0 +1,159 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('path/to/background-image.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .register-container {
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+            .register-container h2 {
+                text-align: center;
+                color: #4CAF50;
+                margin-bottom: 30px;
+            }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+            .form-control:focus {
+                border-color: #4CAF50;
+                box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+            }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+            .btn:hover {
+                background-color: #45a049;
+            }
+
+        .btn-icon {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Join our Farming Community</h2>
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-group">
+                <label asp-for="Input.Email" class="form-label">Email</label>
+                <input id="email" asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Password" class="form-label">Password</label>
+                <input id="password" asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Password" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.ConfirmPassword" class="form-label">Confirm Password</label>
+                <input id="confirmPassword" asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Confirm Password" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Register as:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="role" id="farmerRadio" value="farmer" checked>
+                    <label class="form-check-label" for="farmerRadio">
+                        Farmer
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="role" id="employeeRadio" value="employee">
+                    <label class="form-check-label" for="employeeRadio">
+                        Employee
+                    </label>
+                </div>
+            </div>
+            <button id="registerSubmit" type="button" onclick="register()" class="btn"><i class="fas fa-tractor btn-icon"></i>Join Now</button>
+        </form>
+    </div>
+    @section Scripts {
+        <script>
+            // Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyA1n6tMUhQjZBXAt0MmISVXMrdEDbLiabY",
+                authDomain: "agri-energy-connect-f5b07.firebaseapp.com",
+                databaseURL: "https://agri-energy-connect-f5b07-default-rtdb.firebaseio.com",
+                projectId: "agri-energy-connect-f5b07",
+                storageBucket: "agri-energy-connect-f5b07.appspot.com",
+                messagingSenderId: "114678490560",
+                appId: "1:114678490560:web:3df67319f3eeffa885d425"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            // Function to handle registration
+            function register() {
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+                var confirmPassword = document.getElementById("confirmPassword").value;
+
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match.");
+                    return;
+                }
+
+                firebase.auth().createUserWithEmailAndPassword(email, password)
+                    .then((userCredential) => {
+                        // Registration successful
+                        var user = userCredential.user;
+                        console.log(user);
+                        // Redirect to dashboard or desired page
+                        window.location.href = "/home";
+                    })
+                    .catch((error) => {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        console.error(errorMessage);
+                        // Handle error, show error message to user
+                        alert(errorMessage);
+                    });
+            }
+        </script>
+    }
+</body>
+</html>
