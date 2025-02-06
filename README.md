@@ -135,7 +135,7 @@ This project was developed as an academic assignment. Contributions are not curr
 
 ### Contact
 For questions or feedback, please contact:
-📧 [your-email@example.com]
+📧 [ST10090109@vcconnect.co.za]
 
 ### License
 This project is licensed under the MIT License. See the LICENSE file for details.
