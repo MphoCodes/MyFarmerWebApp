@@ -10,94 +10,89 @@
 7. [Contributing](#contributing)
 8. [Acknowledgments](#acknowledgments)
 
----
-
 ## Introduction
 
 This project is part of the Portfolio of Evidence (PoE) for the Programming 2A module (**PROG6221**). The application allows users to manage recipes, including adding ingredients, steps, and nutritional information. It also includes advanced filtering features.
 
 The application is built using **C#** and **WPF (Windows Presentation Foundation)**, following object-oriented programming principles.
 
----
-
 ## Features
 
 ### Core Functionalities:
-- Add unlimited recipes with names, ingredients, and cooking steps.
-- Display recipes in alphabetical order.
-- Enter calories and food groups for each ingredient.
-- Calculate and display total calories for each recipe.
-- Notify the user when a recipe exceeds 300 calories.
-- Scale recipes by factors of **0.5, 2, or 3**.
-- Reset ingredient quantities to original values.
-- Clear all data to enter a new recipe.
+- Add unlimited recipes with names, ingredients, and cooking steps
+- Display recipes in alphabetical order
+- Enter calories and food groups for each ingredient
+- Calculate and display total calories for each recipe
+- Notify the user when a recipe exceeds 300 calories
+- Scale recipes by factors of **0.5, 2, or 3**
+- Reset ingredient quantities to original values
+- Clear all data to enter a new recipe
 
 ### Advanced Features:
 - **Filter recipes** by:
-  - Ingredient name.
-  - Food group.
-  - Maximum calorie count.
-- Create menus and display a **pie chart** showing the percentage of each food group in the total menu.
-
----
+  - Ingredient name
+  - Food group
+  - Maximum calorie count
+- Create menus and display a **pie chart** showing the percentage of each food group in the total menu
 
 ## Requirements
 
 To run this application, ensure you have the following installed:
 
-- **Visual Studio 2019 or later** (Community Edition is sufficient).
-- **.NET Framework** or **.NET Core SDK**.
-- **Git** (for version control).
-
----
+- **Visual Studio 2019 or later** (Community Edition is sufficient)
+- **.NET Framework** or **.NET Core SDK**
+- **Git** (for version control)
 
 ## Installation
 
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/your-username/PROG6221-PoE.git
-Navigate to the project directory:
+   ```
 
-bash
-Copy
-Edit
-cd PROG6221-PoE
-Open the Project:
+2. **Navigate to the project directory**:
+   ```bash
+   cd PROG6221-PoE
+   ```
 
-Open PROG6221_PoE.sln in Visual Studio.
-Restore Dependencies:
+3. **Open the Project**:
+   - Open PROG6221_PoE.sln in Visual Studio
+   - Restore any missing NuGet packages if prompted
+   - Go to "Build" > "Build Solution" or press Ctrl + Shift + B
 
-If prompted, restore any missing NuGet packages.
-Build the Solution:
+## Usage
 
-Go to "Build" > "Build Solution" or press Ctrl + Shift + B.
-Usage
-Running the Application
-Press F5 in Visual Studio to run the application.
-Adding a Recipe
-Click "Add Recipe".
-Enter a recipe name.
-Use "Add Ingredient" to input details.
-Use "Add Step" to input cooking instructions.
-Click "Save".
-Filtering Recipes
-Click "Filter Recipes".
-Enter criteria (ingredient name, food group, or calorie count).
-Click "Apply Filter".
-Viewing Recipe Details
-Select a recipe from the list.
-A detailed view will show:
-Ingredients, steps, total calories, and warnings.
-Scaling Recipes
-Adjust ingredient quantities by 0.5, 2, or 3.
-Resetting Quantities
-Click "Reset Quantities" to revert to the original values.
-Clearing Data
-Click "Clear Data" to remove all recipes.
-Project Structure
-bash
-Copy
-Edit
+### Running the Application
+- Press F5 in Visual Studio to run the application
+
+### Adding a Recipe
+1. Click "Add Recipe"
+2. Enter a recipe name
+3. Use "Add Ingredient" to input details
+4. Use "Add Step" to input cooking instructions
+5. Click "Save"
+
+### Filtering Recipes
+1. Click "Filter Recipes"
+2. Enter criteria (ingredient name, food group, or calorie count)
+3. Click "Apply Filter"
+
+### Viewing Recipe Details
+- Select a recipe from the list
+- A detailed view will show ingredients, steps, total calories, and warnings
+
+### Scaling Recipes
+- Adjust ingredient quantities by 0.5, 2, or 3
+
+### Resetting Quantities
+- Click "Reset Quantities" to revert to original values
+
+### Clearing Data
+- Click "Clear Data" to remove all recipes
+
+## Project Structure
+
+```
 PROG6221_PoE/
 │
 ├── PROG6221_PoE/
@@ -122,40 +117,25 @@ PROG6221_PoE/
 └── Documentation/             # Additional documentation
     ├── UserManual.pdf          # User manual
     └── FeedbackDescription.txt # Summary of lecturer feedback
-Contributing
+```
+
+## Contributing
+
 This project was developed as an academic assignment. Contributions are not currently accepted, but feel free to fork the repository.
 
-Acknowledgments
-Material Design in XAML Toolkit (for styling the GUI).
-Sweet Life: Food Groups Guide
-Lecturer Feedback for valuable improvements.
-Tags
-Part1: Marks completion of Command-Line Application.
-PoE: Final submission for the Portfolio of Evidence (GUI Application).
-Contact
+## Acknowledgments
+
+- Material Design in XAML Toolkit (for styling the GUI)
+- Sweet Life: Food Groups Guide
+- Lecturer Feedback for valuable improvements
+
+### Tags
+- Part1: Marks completion of Command-Line Application
+- PoE: Final submission for the Portfolio of Evidence (GUI Application)
+
+### Contact
 For questions or feedback, please contact:
 📧 [your-email@example.com]
 
-License
+### License
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-yaml
-Copy
-Edit
-
----
-
-### **How to Use This README**
-1. **Save the file as `README.md`** in your GitHub repository.
-2. **Replace placeholders** like `your-username` and `your-email@example.com`.
-3. **Commit and push** the `README.md` file to your GitHub repository.
-
----
-
-### **Why is this README Effective?**
-✅ **Well-structured**: Uses clear sections with a **Table of Contents**.  
-✅ **Easy to follow**: Provides **installation steps** and **usage instructions**.  
-✅ **Proper formatting**: Uses Markdown for **bold text, bullet points, and code blocks**.  
-✅ **Detailed project structure**: Helps developers understand the code organization.  
-
-Let me know if you need any modifications! 🚀
